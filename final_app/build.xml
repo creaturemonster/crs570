@@ -1,0 +1,67 @@
+<project name="crs570" default="compile" basedir=".">
+
+	<!-- Property Definitions
+
+		 java-ee.jar		Location of Java EE JAR file
+		 deploy.home	Deployment directory for the web application
+		 docs.home		JavaDoc directory
+	-->
+	<property name="crs570.home" value=".." />
+	<property name="java-ee.jar" value="${crs570.home}/lib/java-ee.jar" />
+	<property name="deploy.home" value="WebContent/WEB-INF/classes" />
+	<property name="docs.home" value="docs" />
+	<property name="source.home" value="src" />
+
+
+	<!-- Read in the 'build.properties' file -->
+	<property file="build.properties"/>
+
+	<target name="compile" description="Compile the files">
+
+		<!-- display exercise information: title and directory -->
+		<dirname property="exercise.dirname" file="build.xml"/>
+		<echo message="${exercise.title}"/>
+		<echo message="Directory: ${exercise.dirname}"/>	
+		
+		<javac classpath="${java-ee.jar}" 
+			   srcdir="${source.home}" 
+			   destdir="${deploy.home}" 
+			   deprecation="on" 
+			   includeAntRuntime="false" />
+	</target>
+
+
+	<target name="clean" description="Clean the deployment home">
+		<delete includeEmptyDirs="true" quiet="true">
+			<fileset dir="${deploy.home}/rain" />
+		</delete>	
+	</target>
+
+
+	<target name="all" depends="clean,compile" description="Performs all tasks: clean and compile" />
+
+
+	<target name="javadoc" description="Creates JavaDoc">
+		<echo message="Generating JavaDoc for ${exercise.title}"/>
+		
+		<javadoc sourcefiles="${exercise.javadoc.sourcefiles}"
+				 destdir="${docs.home}"
+				 windowtitle="${exercise.title}"
+				 nohelp="true"
+				 author="true"
+				 use="true">
+			
+			<link href="../../docs/jdk_docs/api" />
+			<link href="../../docs/java-ee/api" />
+
+			 <header><![CDATA[<img src='../resources/ltree_icon.gif'/> <font class="NavBarFont1">Java Servlets &amp; JSP: Course 570</font>]]></header>
+
+			<classpath>
+				<pathelement location="${deploy.home}"/>
+				<pathelement location="${java-ee.jar}"/>
+			</classpath>
+			
+		</javadoc>
+	</target>
+
+</project>

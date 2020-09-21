@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<web-app>
+
+	<display-name>ex41</display-name>
+
+	<!--
+ 	     TODO: Review the listener declarations
+ 	           (nothing to change)
+ 	-->
+
+	<listener>
+		<listener-class>rain.RainAppListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>rain.ShoppingCartSessionListener</listener-class>
+	</listener>
+
+</web-app>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>570 - Final Application</display-name>
+
+	<listener>
+		<listener-class>rain.RainAppListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>rain.ShoppingCartSessionListener</listener-class>
+	</listener>
+	
+</web-app>

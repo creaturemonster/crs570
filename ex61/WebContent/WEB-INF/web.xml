@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<web-app>
+
+	<display-name>ex61</display-name>
+
+	<listener>
+		<listener-class>rain.RainAppListener</listener-class>
+	</listener>
+
+</web-app>

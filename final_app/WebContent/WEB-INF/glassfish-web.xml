@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glassfish-web-app>
+<resource-ref>
+	<res-ref-name>jdbc/RainForestDB</res-ref-name>
+	<jndi-name>jdbc/RainForestDB</jndi-name>
+</resource-ref>
+</glassfish-web-app>

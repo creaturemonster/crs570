@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Context>
+	<Resource
+		name="jdbc/RainForestDB"
+		auth="Container"
+		type="javax.sql.DataSource"
+		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+        username="student"
+        password="student"
+        driverClassName="com.mysql.cj.jdbc.Driver"
+        url="jdbc:mysql://localhost/db570?useSSL=false&amp;autoReconnect=true"
+        maxTotal="100"
+        maxIdle="30"
+        maxWaitMillis="10000"
+    />
+</Context>
